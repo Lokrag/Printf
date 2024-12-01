@@ -44,11 +44,15 @@ clean:
 	${RM} ${OBJ}
 	@echo "$(BLUE)Objetos eliminados: $(words ${OBJ})  ${OBJ}$(DEF_COLOR)"
 	@echo "$(GREEN)Hecho !"
+	rm -f $(OBJS)
 
 fclean: clean
 	@echo "$(RED)eliminando libftprintf.a ...$(DEF_COLOR)"	
 	${RM} $(NAME)
 	@echo "$(BLUE)Objetos eliminados:  $(words $(NAME))  $(NAME)$(DEF_COLOR)"
 	@echo "$(GREEN)Hecho !$(DEF_COLOR)"
+	rm -f $(NAME)
 
-re: fclean all  
+re: fclean all
+
+.PHONY: all clean fclean re

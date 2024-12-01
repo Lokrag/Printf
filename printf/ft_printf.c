@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oalsadi- <oalsadi-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oalsadi- <oalsadi-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 23:46:29 by oalsadi-          #+#    #+#             */
-/*   Updated: 2024/05/26 14:19:30 by oalsadi-         ###   ########.fr       */
+/*   Updated: 2024/12/01 02:33:11 by oalsadi-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	ft_printf_format(va_list arg, const char words)
 		len += ft_printf_str(va_arg(arg, char *));
 	else if (words == 'u')
 		len += ft_printf_unsigned(va_arg(arg, unsigned int));
+	else if (words == '%')
+		ft_printf_char ('%');
 	else
 		len += ft_printf_char(words);
 	return (len);
